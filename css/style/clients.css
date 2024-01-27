@@ -1,0 +1,44 @@
+.clients-bg {
+  background-color: #fffbf9;
+}
+
+.clients h2 {
+  text-align: center;
+  color: #a8a8aa;
+  padding-top: 140px;
+  margin-bottom: 80px;
+  letter-spacing: 8px;
+}
+
+.clients-text p {
+  color: #5f6165;
+  margin-bottom: 80px;
+  line-height: 28px;
+}
+
+.clients-text h3 {
+  color: #26303c;
+  margin-bottom: 10px;
+}
+
+.clients-text span {
+  color: #b7b7b7;
+}
+
+.clients-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 48px;
+  margin-left: 68px;
+  margin-right: 68px;
+}
+
+.clients-text {
+  text-align: center;
+  margin-bottom: 140px;
+}
+
+.clients-text img {
+  display: inline-block;
+  margin-bottom: 80px;
+}

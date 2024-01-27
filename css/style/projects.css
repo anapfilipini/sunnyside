@@ -1,0 +1,13 @@
+.projects {
+  display: flex;
+  overflow: hidden;
+}
+
+.projects img {
+  transform: scale(1);
+  transition-duration: 0.4s;
+}
+
+.projects div:hover img {
+  transform: scale(1.2);
+}

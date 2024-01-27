@@ -1,0 +1,79 @@
+.header-bg {
+  background-image: url(/images/desktop/image-header.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 800px;
+}
+
+.header {
+  padding-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.header a {
+  color: #ffffff;
+}
+
+.btn a {
+  color: #282e35;
+}
+
+.nav {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav a:not(:last-child)::after {
+  content: "";
+  width: 0px;
+  height: 2px;
+  background-color: #ffffff;
+  display: block;
+  margin-top: 4px;
+  transition: 0.4s;
+}
+
+.nav a:not(:last-child):hover:after {
+  width: 100%;
+}
+
+.btn {
+  background-color: #ffffff;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 50px;
+  transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+.btn:hover {
+  background-color: transparent;
+  outline: 2px solid #ffffff;
+}
+
+.btn:hover a {
+  color: #ffffff;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  flex-wrap: wrap;
+}
+
+.title h1 {
+  color: #ffffff;
+  letter-spacing: 8px;
+  display: flex;
+  position: absolute;
+}
+
+.title span {
+  content: url(/images/icon-arrow-down.svg);
+  position: relative;
+  top: 180px;
+}
