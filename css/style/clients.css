@@ -42,3 +42,42 @@
   display: inline-block;
   margin-bottom: 80px;
 }
+
+@media (max-width: 1200px) {
+  .clients-text {
+    margin-bottom: 100px;
+  }
+  .clients h2 {
+    padding-top: 100px;
+  }
+  .clients-text p {
+    margin-bottom: 40px;
+  }
+  .clients-text img {
+    margin-bottom: 40px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 700px) {
+  .clients-content {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .clients h2 {
+    margin-bottom: 40px;
+    padding-top: 80px;
+  }
+  .clients-text p {
+    margin-bottom: 20px;
+  }
+  .clients-text img {
+    margin-bottom: 20px;
+  }
+  .clients-text {
+    margin-bottom: 40px;
+  }
+  .clients-text:last-child {
+    margin-bottom: 80px;
+  }
+}
