@@ -41,3 +41,13 @@ footer h2 {
     height: 24px;
   }
 }
+
+@media (max-width: 700px) {
+  .footer-container {
+    padding: 40px;
+  }
+  .footer-links {
+    gap: 40px;
+    margin-bottom: 80px;
+  }
+}

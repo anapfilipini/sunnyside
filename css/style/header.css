@@ -73,7 +73,7 @@
 }
 
 .title span {
-  content: url(/images/icon-arrow-down.svg);
+  content: url("../../images/icon-arrow-down.svg");
   position: relative;
   top: 180px;
 }

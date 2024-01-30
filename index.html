@@ -37,11 +37,11 @@
       <div class="header-bg">
         <div class="header container">
           <a class="font-3 logo" href="./">sunnyside</a>
-          <nav class="font-2-m nav">
-            <a href="./">about</a>
-            <a href="./">services</a>
-            <a href="./">projects</a>
-            <button class="btn"><a class="font-1-xs" href="./">CONTACT</a></button>
+          <nav class="font-2-m nav js-menu">
+            <a href="#about">about</a>
+            <a href="#services">services</a>
+            <a href="#projects">projects</a>
+            <button class="btn"><a class="font-1-xs" href="#contact">CONTACT</a></button>
           </nav>
           <button id="menu">
             <span></span>
@@ -56,8 +56,8 @@
       </div>
     </header>
 
-    <main>
-      <div class="main-content">
+    <main class="js-scroll">
+      <div class="main-content" id="about">
         <div class="main-text">
           <h2 class="font-1-l">Transform your brand</h2>
           <p class="font-2-m">We are full-service creative agency specializing in helping brands grow fast. Engage your clients through compelling visuals that do most of the marketing for you.</p>
@@ -82,7 +82,7 @@
 
       </div>
 
-      <div class="main-content">
+      <div class="main-content" id="services">
         <div class="services">
           <div class="services-design">
             <div class="services-text">
@@ -102,7 +102,7 @@
       </div>
     </main>
 
-    <section>
+    <section class="js-scroll">
       <div class="clients-bg">
         <div class="clients">
           <h2 class="font-1-s">CLIENT TESTIMONIALS</h2>
@@ -133,7 +133,7 @@
     </section>
 
     <section>
-      <div class="projects">
+      <div class="projects js-scroll" id="projects">
         <div><img src="./images/desktop/orange.png" alt=""></div>
         <div><img src="./images/desktop/lemon.png" alt=""></div>
         <div><img src="./images/desktop/sugar.png" alt=""></div>
@@ -142,7 +142,7 @@
     </section>
 
     <footer>
-      <div class="footer-bg">
+      <div class="footer-bg" id="contact">
         <div class="footer-container container">
           <h2 class="font-3">sunnyside</h2>
           <div class="footer-content">
@@ -184,16 +184,43 @@
       btnMenu.classList.toggle('active')
     }
 
-  </script>
+    const sections = document.querySelectorAll('.js-scroll')
+    const halfWindow = window.innerHeight * 0.6
 
-  <style>
-    .header-bg {
-      background-image: url('./images/desktop/image-header.jpg');
-      background-size: cover;
-      background-position: center;
-      height: 800px;
+    function animaScroll() {
+      sections.forEach((section) => {
+        const sectionTop = section.getBoundingClientRect().top
+        const isSectionVisible = sectionTop - halfWindow
+        if (isSectionVisible < 0) {
+          section.classList.add('active')
+        } else {
+          section.classList.remove('active')
+        }
+      })
     }
-  </style>
+
+    animaScroll()
+
+    window.addEventListener('scroll', animaScroll)
+
+
+    const linksInternos = document.querySelectorAll('.js-menu a[href^="#"]')
+
+    function scrollToSection(event) {
+      event.preventDefault()
+      const href = event.currentTarget.getAttribute('href')
+      const section = document.querySelector(href)
+      section.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+
+    linksInternos.forEach((link) => {
+      link.addEventListener('click', scrollToSection)
+    })
+
+  </script>
 
 </body>
 
